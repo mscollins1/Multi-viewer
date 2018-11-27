@@ -32,6 +32,10 @@ class configViewController: UIViewController {
         if segue.destination is multiViewController{
             let multivc = segue.destination as! multiViewController
             multivc.segmentNum = numberOfScreensSegment.selectedSegmentIndex
+            multivc.URLs.append(url1.text)
+            multivc.URLs.append(url2.text)
+            multivc.URLs.append(url3.text)
+
         }
         
     }
