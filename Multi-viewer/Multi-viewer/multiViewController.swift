@@ -10,6 +10,8 @@ import UIKit
 import WebKit
 
 class multiViewController: UIViewController {
+    let setHeight = UIScreen.main.bounds.height
+    let setWidth = UIScreen.main.bounds.width
     var segmentNum = Int()
     var numScreens = Int()
     var URLs: [String?] = []
@@ -40,12 +42,20 @@ class multiViewController: UIViewController {
     
     func landscapeOrientation(){
         //set variable widths
-        //let newWidth = UIScreen.main.bounds.width
+        let newWidth = setHeight/CGFloat(numScreens)
+        let newHeight = setWidth
+        for i in 0...numScreens-1{
+            webviewArray[i].frame = CGRect(x: newWidth*CGFloat(i), y: 0, width: newWidth, height: newHeight)
+        }
     }
     
     func portraitOrientation(){
         // same as initial setup
-        
+        let newWidth = setWidth
+        let newHeight = setHeight/CGFloat(numScreens)
+        for i in 0...numScreens-1{
+            webviewArray[i].frame = CGRect(x: 0, y: newHeight*CGFloat(i), width: newWidth, height: newHeight)
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
