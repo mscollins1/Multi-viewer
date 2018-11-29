@@ -15,6 +15,21 @@ class configViewController: UIViewController {
     @IBOutlet weak var url3: UITextField!
     
     
+    @IBAction func helpButton(_ sender: Any) {
+        //create an alert controller onject
+        let alertContrller = UIAlertController(title: "Instructions", message: "Type in one or multiple URLS and click the apply button to show them on another screen", preferredStyle: UIAlertController.Style.alert)
+        
+        //set up button
+        let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        
+        //add button to alert controller
+        alertContrller.addAction(defaultAction)
+        
+        //display alert controller
+        present(alertContrller, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
