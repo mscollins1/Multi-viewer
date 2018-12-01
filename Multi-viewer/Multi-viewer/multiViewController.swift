@@ -19,6 +19,20 @@ class multiViewController: UIViewController {
     var webviewArray: [WKWebView] = []
     var defaultURL = "https://www.google.com"
     
+    @IBOutlet weak var toolbar: UIToolbar!
+    
+    @IBAction func returnToConfig(_ sender: Any) {
+        for i in 0...(presentingViewController as! configViewController).urlArray.count-1{
+            (presentingViewController as! configViewController).urlArray[i].text = URLs[i]
+        }
+        //(presentingViewController as! configViewController).url1.text = URLs[0]
+        //(presentingViewController as! configViewController).url2.text = URLs[1]
+        //(presentingViewController as! configViewController).url3.text = URLs[2]
+
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func setupScreens(){
         let maxWidth = UIScreen.main.bounds.width
         let maxHeight = UIScreen.main.bounds.height/CGFloat(numScreens)
@@ -27,8 +41,8 @@ class multiViewController: UIViewController {
         for i in 0...numScreens-1{
             webviewArray.append(WKWebView())
             webviewArray[i].frame = CGRect(x: 0, y: maxHeight*CGFloat(i), width: maxWidth, height: maxHeight)
-            let newURL = checkURL(i)
-            let newRequest = URLRequest(url: newURL)
+            let newURL = URL(string: URLs[i]!)
+            let newRequest = URLRequest(url: newURL!)
             webviewArray[i].load(newRequest)
             self.view.addSubview(webviewArray[i])
         }
@@ -78,6 +92,7 @@ class multiViewController: UIViewController {
         }
         setupScreens()
         view.backgroundColor = UIColor.cyan
+        self.view.bringSubviewToFront(toolbar)
     }
     
 

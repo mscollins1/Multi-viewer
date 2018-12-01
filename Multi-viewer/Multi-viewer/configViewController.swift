@@ -13,7 +13,71 @@ class configViewController: UIViewController {
     @IBOutlet weak var url1: UITextField!
     @IBOutlet weak var url2: UITextField!
     @IBOutlet weak var url3: UITextField!
+    var urlArray: [UITextField] = []
     
+    var defaultURL = "https://www.google.com"
+    
+    @IBAction func checkURLAndSegue(_ sender: Any) {
+        setURLArray()
+        for i in 0...urlArray.count-1{
+            checkURL(urlArray[i].text, i)
+        }
+
+        performSegue(withIdentifier: "multiview", sender: nil)
+
+    }
+    func setURLArray(){
+        urlArray = []
+        let numScreens = getNumScreens()
+        urlArray.append(url1)
+        urlArray.append(url2)
+        if numScreens == 3{
+            urlArray.append(url3)
+        }
+    }
+    
+    func getNumScreens()->Int{
+        if numberOfScreensSegment.selectedSegmentIndex == 0{
+            return 2
+        } else {
+            return 3
+        }
+    }
+    
+    func checkURL(_ url: String?, _ index: Int){
+        if url?.isEmpty == false{
+            if let urlstring = URL(string: url!) {
+                if UIApplication.shared.canOpenURL(urlstring) == true{
+                    //we are good, URL is valid
+                    return
+                }
+            }
+        } else if url?.isEmpty == true {
+            //set the URL to google since left blank
+            urlArray[index].text = defaultURL
+            return
+        }
+        //we must alert/prompt user to change their URL
+        badURL(url!, index)
+    }
+    
+    func badURL(_ url: String, _ index: Int){
+        //create an alert controller onject
+        let alertContrller = UIAlertController(title: "One or More Bad URL(s)", message: "Type in a valid URL (or leave blank to default to google):", preferredStyle: UIAlertController.Style.alert)
+        alertContrller.addTextField(configurationHandler: {(textField: UITextField) in
+            textField.placeholder = "https://www.google.com"
+            textField.keyboardType = UIKeyboardType.URL
+        })
+        let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(alertAction: UIAlertAction) in
+            let actionURL: String = alertContrller.textFields![0].text!
+            self.urlArray[index].text = actionURL
+        })
+        
+        alertContrller.addAction(defaultAction)
+        present(alertContrller, animated: true, completion: nil)
+        //return "this is a placeholder return function so swift can compile"
+        
+    }
     
     @IBAction func helpButton(_ sender: Any) {
         //create an alert controller onject
@@ -32,8 +96,8 @@ class configViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     
 
