@@ -23,13 +23,45 @@ class multiViewController: UIViewController {
     
     
     @IBAction func removeWebview(_ sender: Any) {
-        //can either do this as an alert or a pop over (lets try popover)
+        //trying alert first, maybe make this into popover
+        if webviewArray.count == 2{
+            //maybe show an alert here to tell user they can't remove anymore webviews
+            return
+        }
         
+        let alertContrller = UIAlertController(title: "Remove a Webview", message: "Choose which webview to remove:", preferredStyle: UIAlertController.Style.alert)
+        
+        var alertButtonsArray: [UIAlertAction] = []
+        
+        for i in 0...numScreens-1{
+            //add buttons with action to remove selected subview, then call the landscape/portrait function to resize frames
+            alertButtonsArray.append(UIAlertAction(title: "\(i+1)", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+                //first remove the subview
+                self.view.willRemoveSubview(self.webviewArray[i])
+                //then remove from array
+                self.webviewArray.remove(at: i)
+                //update numScreens Counter
+                self.numScreens -= 1
+                //resize the rest of the subviews
+                if UIDevice.current.orientation.isLandscape {
+                    self.landscapeOrientation()
+                } else {
+                    self.portraitOrientation()
+                }
+            }))
+            alertContrller.addAction(alertButtonsArray[i])
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        alertContrller.addAction(cancelAction)
+        present(alertContrller, animated: true, completion: nil)
     }
     
     @IBAction func addWebview(_ sender: Any) {
         //check to see if we should even add
         if webviewArray.count == 3{
+            //maybe show an alert here to tell user they can't add anymore webviews
             return
         }
         
