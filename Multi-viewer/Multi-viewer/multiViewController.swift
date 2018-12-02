@@ -37,7 +37,7 @@ class multiViewController: UIViewController {
             //add buttons with action to remove selected subview, then call the landscape/portrait function to resize frames
             alertButtonsArray.append(UIAlertAction(title: "\(i+1)", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
                 //first remove the subview
-                self.view.willRemoveSubview(self.webviewArray[i])
+                self.webviewArray[i].removeFromSuperview()
                 //then remove from array
                 self.webviewArray.remove(at: i)
                 //update numScreens Counter
