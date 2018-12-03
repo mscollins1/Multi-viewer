@@ -43,11 +43,7 @@ class multiViewController: UIViewController {
                 //update numScreens Counter
                 self.numScreens -= 1
                 //resize the rest of the subviews
-                if UIDevice.current.orientation.isLandscape {
-                    self.landscapeOrientation()
-                } else {
-                    self.portraitOrientation()
-                }
+                self.resizeViews()
             }))
             alertContrller.addAction(alertButtonsArray[i])
         }
@@ -71,11 +67,7 @@ class multiViewController: UIViewController {
         numScreens += 1
         
         //will need to check for orientation and then update frames
-        if UIDevice.current.orientation.isLandscape {
-            landscapeOrientation()
-        } else {
-            portraitOrientation()
-        }
+        resizeViews()
         //load google as default search engine
         //let newURL = URL(string: URLs[i]!)
         //let newRequest = URLRequest(url: newURL!)
@@ -136,14 +128,19 @@ class multiViewController: UIViewController {
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
+    func resizeViews(){
         if UIDevice.current.orientation.isLandscape {
             landscapeOrientation()
         } else {
             portraitOrientation()
         }
     }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        resizeViews()
+    }
+    
     
     
     override func viewDidLoad() {
