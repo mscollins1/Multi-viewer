@@ -46,9 +46,16 @@ class configViewController: UIViewController {
     
     func checkURL(_ url: String?, _ index: Int){
         if url?.isEmpty == false{
-            if let urlstring = URL(string: url!) {
+            if((url!.range(of: "https://")) != nil){
+                if UIApplication.shared.canOpenURL(URL(string: "\(url!)")!) == true{
+                    //valid url with https:// already in front
+                    return
+                }
+            } else if let urlstring = URL(string: "https://\(url!)"){
                 if UIApplication.shared.canOpenURL(urlstring) == true{
-                    //we are good, URL is valid
+                    //another valid url, but need to append https to beginning
+                    urlArray[index].text = "https://\(urlArray[index].text!)"
+                    print("\(url!) is another valid url, but need to append https to beginning: \(urlArray[index].text!)")
                     return
                 }
             }
@@ -122,10 +129,9 @@ class configViewController: UIViewController {
         if segue.destination is multiViewController{
             let multivc = segue.destination as! multiViewController
             multivc.segmentNum = numberOfScreensSegment.selectedSegmentIndex
-            multivc.URLs.append(url1.text)
-            multivc.URLs.append(url2.text)
-            multivc.URLs.append(url3.text)
-
+            multivc.URLs.append("\(String(describing: url1.text!))")
+            multivc.URLs.append("\(String(describing: url2.text!))")
+            multivc.URLs.append("\(String(describing: url3.text!))")
         }
         
     }

@@ -98,6 +98,7 @@ class multiViewController: UIViewController {
             webviewArray.append(WKWebView())
             webviewArray[i].frame = CGRect(x: 0, y: maxHeight*CGFloat(i), width: maxWidth, height: maxHeight)
             let newURL = URL(string: URLs[i]!)
+            print(URLs[i]!)
             let newRequest = URLRequest(url: newURL!)
             webviewArray[i].load(newRequest)
             self.view.addSubview(webviewArray[i])
