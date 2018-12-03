@@ -44,20 +44,26 @@ class configViewController: UIViewController {
         }
     }
     
+    func isValidUrlWithoutHttps(_ url: String) -> Bool {
+        //credit: https://stackoverflow.com/questions/29106005/url-validation-in-swift/37065820
+        let urlRegEx = "^(https?://)?(www\\.)?([-a-z0-9]{1,63}\\.)*?[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\\.[a-z]{2,6}(/[-\\w@\\+\\.~#\\?&/=%]*)?$"
+        let urlTest = NSPredicate(format:"SELF MATCHES %@", urlRegEx)
+        let result = urlTest.evaluate(with: url)
+        return result
+    }
+    
     func checkURL(_ url: String?, _ index: Int){
         if url?.isEmpty == false{
             if((url!.range(of: "https://")) != nil){
-                if UIApplication.shared.canOpenURL(URL(string: "\(url!)")!) == true{
+                if UIApplication.shared.canOpenURL(URL(string: url!)!) == true{
                     //valid url with https:// already in front
                     return
                 }
-            } else if let urlstring = URL(string: "https://\(url!)"){
-                if UIApplication.shared.canOpenURL(urlstring) == true{
-                    //another valid url, but need to append https to beginning
-                    urlArray[index].text = "https://\(urlArray[index].text!)"
-                    print("\(url!) is another valid url, but need to append https to beginning: \(urlArray[index].text!)")
-                    return
-                }
+            } else if isValidUrlWithoutHttps(url!) == true{
+                //another valid url, but need to append https to beginning
+                urlArray[index].text = "https://\(urlArray[index].text!)"
+                print("\(url!) is another valid url, but need to append https to beginning: \(urlArray[index].text!)")
+                return
             }
         } else if url?.isEmpty == true {
             //set the URL to google since left blank
