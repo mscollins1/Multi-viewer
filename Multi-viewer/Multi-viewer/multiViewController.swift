@@ -97,9 +97,14 @@ class multiViewController: UIViewController {
         for i in 0...numScreens-1{
             webviewArray.append(WKWebView())
             webviewArray[i].frame = CGRect(x: 0, y: maxHeight*CGFloat(i), width: maxWidth, height: maxHeight)
-            let newURL = URL(string: URLs[i]!)
-            print(URLs[i]!)
-            let newRequest = URLRequest(url: newURL!)
+            var newRequest: URLRequest
+            if let newURL = URL(string: URLs[i]!){
+                newRequest = URLRequest(url: newURL)
+            } else {
+                newRequest = URLRequest(url: URL(string: defaultURL)!)
+            }
+            // for some reason this evaluates to nil and crashes program... I think its because sometimes when typing, autocorrect will make a space in the url, messing everything up
+            
             webviewArray[i].load(newRequest)
             self.view.addSubview(webviewArray[i])
         }
