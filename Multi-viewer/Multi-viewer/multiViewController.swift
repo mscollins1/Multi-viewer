@@ -23,7 +23,6 @@ class multiViewController: UIViewController {
     
     
     @IBAction func removeWebview(_ sender: Any) {
-        //trying alert first, maybe make this into popover
         if webviewArray.count == 2{
             //maybe show an alert here to tell user they can't remove anymore webviews
             return
@@ -76,6 +75,8 @@ class multiViewController: UIViewController {
         self.view.addSubview(webviewArray[2])
         //keep toolbar in front
         self.view.bringSubviewToFront(toolbar)
+        //add ability to go forward/backward through webpages
+        webviewArray[2].allowsBackForwardNavigationGestures = true
     }
     
     
@@ -103,10 +104,10 @@ class multiViewController: UIViewController {
             } else {
                 newRequest = URLRequest(url: URL(string: defaultURL)!)
             }
-            // for some reason this evaluates to nil and crashes program... I think its because sometimes when typing, autocorrect will make a space in the url, messing everything up
-            
             webviewArray[i].load(newRequest)
             self.view.addSubview(webviewArray[i])
+            //finally add ability to use gesture of going forward/backward
+            webviewArray[i].allowsBackForwardNavigationGestures = true
         }
     }
     func checkURL(_ integer: Int)->(URL){
