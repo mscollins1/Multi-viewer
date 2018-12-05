@@ -10,6 +10,9 @@ import UIKit
 import WebKit
 
 class multiViewController: UIViewController {
+    let contentController = WKUserContentController()
+    let config = WKWebViewConfiguration()
+
     let setHeight = UIScreen.main.bounds.height
     let setWidth = UIScreen.main.bounds.width
     var segmentNum = Int()
@@ -61,7 +64,7 @@ class multiViewController: UIViewController {
         }
         
         //create new webview object
-        webviewArray.append(WKWebView())
+        webviewArray.append(WKWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), configuration: config))
         //adjust numscreens to account for new # of views
         numScreens += 1
         
@@ -94,9 +97,12 @@ class multiViewController: UIViewController {
         let maxWidth = UIScreen.main.bounds.width
         let maxHeight = UIScreen.main.bounds.height/CGFloat(numScreens)
         
+        //setup configs for webview
+        config.allowsInlineMediaPlayback = true
+        
         //create each subView
         for i in 0...numScreens-1{
-            webviewArray.append(WKWebView())
+            webviewArray.append(WKWebView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), configuration: config))
             webviewArray[i].frame = CGRect(x: 0, y: maxHeight*CGFloat(i), width: maxWidth, height: maxHeight)
             var newRequest: URLRequest
             if let newURL = URL(string: URLs[i]!){
@@ -161,6 +167,8 @@ class multiViewController: UIViewController {
         initialSetupScreens()
         view.backgroundColor = UIColor.cyan
         self.view.bringSubviewToFront(toolbar)
+        
+        
     }
     
 
