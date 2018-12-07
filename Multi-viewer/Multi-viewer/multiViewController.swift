@@ -27,7 +27,16 @@ class multiViewController: UIViewController {
     
     @IBAction func removeWebview(_ sender: Any) {
         if webviewArray.count == 2{
-            //maybe show an alert here to tell user they can't remove anymore webviews
+            let alertController = UIAlertController(title: "Attention:", message: "There is a minimum of two screens.\nCannot remove any more screens.", preferredStyle: UIAlertController.Style.alert)
+            
+            //set up button
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            
+            //add button to alert controller
+            alertController.addAction(defaultAction)
+            
+            //display the alert controller
+            present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -59,7 +68,17 @@ class multiViewController: UIViewController {
     @IBAction func addWebview(_ sender: Any) {
         //check to see if we should even add
         if webviewArray.count == 3{
-            //maybe show an alert here to tell user they can't add anymore webviews
+            //display alert telling user there is a max of 3 views
+            let alertController = UIAlertController(title: "Attention:", message: "There is a maximum of three screens.\nCannot add any more screens.", preferredStyle: UIAlertController.Style.alert)
+            
+            //set up button
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            
+            //add button to alert controller
+            alertController.addAction(defaultAction)
+            
+            //display the alert controller
+            present(alertController, animated: true, completion: nil)
             return
         }
         
