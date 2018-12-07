@@ -27,17 +27,27 @@ class multiViewController: UIViewController {
     
     @IBAction func removeWebview(_ sender: Any) {
         if webviewArray.count == 2{
-            //maybe show an alert here to tell user they can't remove anymore webviews
+            //display alert telling user there is a min of 2 views
+            let alertController = UIAlertController(title: "Attention:", message: "There is a minimum of two screens.\nCannot remove any more screens.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            //set up button
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            
+            //add button to alert controller
+            alertController.addAction(defaultAction)
+            
+            //display the alert controller
+            present(alertController, animated: true, completion: nil)
             return
         }
         
-        let alertContrller = UIAlertController(title: "Remove a Webview", message: "Choose which webview to remove:", preferredStyle: UIAlertController.Style.alert)
+        let alertContrller = UIAlertController(title: "Remove a Webview", message: "Choose which webview to remove:", preferredStyle: UIAlertControllerStyle.alert)
         
         var alertButtonsArray: [UIAlertAction] = []
         
         for i in 0...numScreens-1{
             //add buttons with action to remove selected subview, then call the landscape/portrait function to resize frames
-            alertButtonsArray.append(UIAlertAction(title: "\(i+1)", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            alertButtonsArray.append(UIAlertAction(title: "\(i+1)", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
                 //first remove the subview
                 self.webviewArray[i].removeFromSuperview()
                 //then remove from array
@@ -50,7 +60,7 @@ class multiViewController: UIViewController {
             alertContrller.addAction(alertButtonsArray[i])
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
         
         alertContrller.addAction(cancelAction)
         present(alertContrller, animated: true, completion: nil)
@@ -59,7 +69,17 @@ class multiViewController: UIViewController {
     @IBAction func addWebview(_ sender: Any) {
         //check to see if we should even add
         if webviewArray.count == 3{
-            //maybe show an alert here to tell user they can't add anymore webviews
+            //display alert telling user there is a max of 3 views
+            let alertController = UIAlertController(title: "Attention:", message: "There is a maximum of three screens.\nCannot add any more screens.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            //set up button
+            let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            
+            //add button to alert controller
+            alertController.addAction(defaultAction)
+            
+            //display the alert controller
+            present(alertController, animated: true, completion: nil)
             return
         }
         
@@ -77,7 +97,8 @@ class multiViewController: UIViewController {
         //finally add the latest webview as a subview
         self.view.addSubview(webviewArray[2])
         //keep toolbar in front
-        self.view.bringSubviewToFront(toolbar)
+        //self.view.bringSubviewToFront(toolbar)
+        self.view.bringSubview(toFront: toolbar)
         //add ability to go forward/backward through webpages
         webviewArray[2].allowsBackForwardNavigationGestures = true
     }
@@ -166,7 +187,8 @@ class multiViewController: UIViewController {
         }
         initialSetupScreens()
         view.backgroundColor = UIColor.cyan
-        self.view.bringSubviewToFront(toolbar)
+        //self.view.bringSubviewToFront(toolbar)
+        self.view.bringSubview(toFront: toolbar)
         
         
     }

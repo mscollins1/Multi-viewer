@@ -76,12 +76,12 @@ class configViewController: UIViewController {
     
     func badURL(_ url: String, _ index: Int){
         //create an alert controller onject
-        let alertContrller = UIAlertController(title: "One or More Bad URL(s)", message: "Type in a valid URL (or leave blank to default to google):", preferredStyle: UIAlertController.Style.alert)
+        let alertContrller = UIAlertController(title: "One or More Bad URL(s)", message: "Type in a valid URL (or leave blank to default to google):", preferredStyle: UIAlertControllerStyle.alert)
         alertContrller.addTextField(configurationHandler: {(textField: UITextField) in
             textField.placeholder = "https://www.google.com"
             textField.keyboardType = UIKeyboardType.URL
         })
-        let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(alertAction: UIAlertAction) in
+        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {(alertAction: UIAlertAction) in
             let actionURL: String = alertContrller.textFields![0].text!
             self.urlArray[index].text = actionURL
         })
@@ -94,10 +94,10 @@ class configViewController: UIViewController {
     
     @IBAction func helpButton(_ sender: Any) {
         //create an alert controller onject
-        let alertContrller = UIAlertController(title: "Instructions", message: "Type in one or multiple URLS and click the apply button to show them on another screen", preferredStyle: UIAlertController.Style.alert)
+        let alertContrller = UIAlertController(title: "Instructions", message: "Type in one or multiple URLS and click the apply button to show them on another screen", preferredStyle: UIAlertControllerStyle.alert)
         
         //set up button
-        let defaultAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
         
         //add button to alert controller
         alertContrller.addAction(defaultAction)
