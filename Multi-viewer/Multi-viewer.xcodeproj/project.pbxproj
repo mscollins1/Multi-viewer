@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41BC1BFF21BD8C8900B7F58F /* TutorialStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1BFE21BD8C8900B7F58F /* TutorialStart.swift */; };
+		41BC1C0121BD937A00B7F58F /* ConfigurationTutorialPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1C0021BD937A00B7F58F /* ConfigurationTutorialPart2.swift */; };
+		41BC1C0321BD99B800B7F58F /* WebsiteStartTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1C0221BD99B800B7F58F /* WebsiteStartTutorial.swift */; };
+		41BC1C0521BD9CA700B7F58F /* AddButtonTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1C0421BD9CA700B7F58F /* AddButtonTutorial.swift */; };
+		41BC1C0721BD9EF200B7F58F /* RemoveTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1C0621BD9EF200B7F58F /* RemoveTutorial.swift */; };
+		41BC1C0921BDA08A00B7F58F /* CongifurationButtonTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1C0821BDA08A00B7F58F /* CongifurationButtonTutorial.swift */; };
+		41BC1C0B21BDA09800B7F58F /* HideTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BC1C0A21BDA09800B7F58F /* HideTutorial.swift */; };
 		EE1FDBBF21AB383E00BD0DA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FDBBE21AB383E00BD0DA1 /* AppDelegate.swift */; };
 		EE1FDBC121AB383E00BD0DA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1FDBC021AB383E00BD0DA1 /* ViewController.swift */; };
 		EE1FDBC421AB383E00BD0DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1FDBC221AB383E00BD0DA1 /* Main.storyboard */; };
@@ -36,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41BC1BFE21BD8C8900B7F58F /* TutorialStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialStart.swift; sourceTree = "<group>"; };
+		41BC1C0021BD937A00B7F58F /* ConfigurationTutorialPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTutorialPart2.swift; sourceTree = "<group>"; };
+		41BC1C0221BD99B800B7F58F /* WebsiteStartTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteStartTutorial.swift; sourceTree = "<group>"; };
+		41BC1C0421BD9CA700B7F58F /* AddButtonTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonTutorial.swift; sourceTree = "<group>"; };
+		41BC1C0621BD9EF200B7F58F /* RemoveTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveTutorial.swift; sourceTree = "<group>"; };
+		41BC1C0821BDA08A00B7F58F /* CongifurationButtonTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongifurationButtonTutorial.swift; sourceTree = "<group>"; };
+		41BC1C0A21BDA09800B7F58F /* HideTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTutorial.swift; sourceTree = "<group>"; };
 		EE1FDBBB21AB383E00BD0DA1 /* Multi-viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multi-viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1FDBBE21AB383E00BD0DA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE1FDBC021AB383E00BD0DA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +118,13 @@
 				EE1FDBBE21AB383E00BD0DA1 /* AppDelegate.swift */,
 				EE1FDBC021AB383E00BD0DA1 /* ViewController.swift */,
 				EE1FDBC221AB383E00BD0DA1 /* Main.storyboard */,
+				41BC1C0821BDA08A00B7F58F /* CongifurationButtonTutorial.swift */,
+				41BC1C0A21BDA09800B7F58F /* HideTutorial.swift */,
+				41BC1C0621BD9EF200B7F58F /* RemoveTutorial.swift */,
+				41BC1C0421BD9CA700B7F58F /* AddButtonTutorial.swift */,
+				41BC1C0221BD99B800B7F58F /* WebsiteStartTutorial.swift */,
+				41BC1C0021BD937A00B7F58F /* ConfigurationTutorialPart2.swift */,
+				41BC1BFE21BD8C8900B7F58F /* TutorialStart.swift */,
 				EE1FDBEE21AC752E00BD0DA1 /* multiViewController.swift */,
 				EE1FDBEC21AC749F00BD0DA1 /* configViewController.swift */,
 				EE1FDBC521AB384000BD0DA1 /* Assets.xcassets */,
@@ -262,10 +283,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BC1C0321BD99B800B7F58F /* WebsiteStartTutorial.swift in Sources */,
+				41BC1C0721BD9EF200B7F58F /* RemoveTutorial.swift in Sources */,
 				EE1FDBC121AB383E00BD0DA1 /* ViewController.swift in Sources */,
 				EE1FDBED21AC749F00BD0DA1 /* configViewController.swift in Sources */,
+				41BC1C0121BD937A00B7F58F /* ConfigurationTutorialPart2.swift in Sources */,
 				EE1FDBEF21AC752E00BD0DA1 /* multiViewController.swift in Sources */,
 				EE1FDBBF21AB383E00BD0DA1 /* AppDelegate.swift in Sources */,
+				41BC1C0921BDA08A00B7F58F /* CongifurationButtonTutorial.swift in Sources */,
+				41BC1C0B21BDA09800B7F58F /* HideTutorial.swift in Sources */,
+				41BC1C0521BD9CA700B7F58F /* AddButtonTutorial.swift in Sources */,
+				41BC1BFF21BD8C8900B7F58F /* TutorialStart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

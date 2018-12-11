@@ -15,6 +15,8 @@ class configViewController: UIViewController {
     @IBOutlet weak var url3: UITextField!
     var urlArray: [UITextField] = []
     
+
+    
     var defaultURL = "https://www.google.com"
     
     @IBAction func checkURLAndSegue(_ sender: Any) {
@@ -26,6 +28,8 @@ class configViewController: UIViewController {
         performSegue(withIdentifier: "multiview", sender: nil)
 
     }
+    
+    
     func setURLArray(){
         urlArray = []
         let numScreens = getNumScreens()
@@ -90,20 +94,6 @@ class configViewController: UIViewController {
         present(alertContrller, animated: true, completion: nil)
         //return "this is a placeholder return function so swift can compile"
         
-    }
-    
-    @IBAction func helpButton(_ sender: Any) {
-        //create an alert controller onject
-        let alertContrller = UIAlertController(title: "Instructions", message: "Type in one or multiple URLS and click the apply button to show them on another screen", preferredStyle: UIAlertControllerStyle.alert)
-        
-        //set up button
-        let defaultAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-        
-        //add button to alert controller
-        alertContrller.addAction(defaultAction)
-        
-        //display alert controller
-        present(alertContrller, animated: true, completion: nil)
     }
     
     
