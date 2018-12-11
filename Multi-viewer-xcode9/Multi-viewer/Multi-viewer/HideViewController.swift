@@ -1,19 +1,15 @@
 //
-//  TutorialSeventhScene.swift
+//  HideViewController.swift
 //  Multi-viewer
 //
-//  Created by Skotny, Benjamin on 12/9/18.
+//  Created by Skotny, Benjamin on 12/11/18.
 //  Copyright © 2018 Mike Scollins. All rights reserved.
 //
 
 import UIKit
 
-class TutorialSeventhScene: UIViewController {
+class HideViewController: UIViewController {
 
-    @IBAction func hideToConfigPage(_ sender: Any) {
-        performSegue(withIdentifier: "HideToConfig", sender: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
