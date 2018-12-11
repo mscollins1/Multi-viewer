@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,6 +71,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardEnter:" destination="28X-OF-kZj" eventType="editingDidEndOnExit" id="rBU-Vq-xss"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# of Screens:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q71-OG-DrM">
                                 <rect key="frame" x="16" y="49" width="184" height="21"/>
@@ -105,6 +109,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="keyboardEnter:" destination="28X-OF-kZj" eventType="editingDidEndOnExit" id="cXG-cq-Gjp"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View 3 (if selected above):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbG-mQ-GsL">
                                 <rect key="frame" x="47" y="370" width="203" height="21"/>
@@ -119,13 +126,32 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snw-hq-VZQ">
-                                <rect key="frame" x="154" y="538" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Apply"/>
                                 <connections>
-                                    <segue destination="AKf-XH-LEA" kind="presentation" id="8Iw-c3-NFN"/>
+                                    <action selector="keyboardEnter:" destination="28X-OF-kZj" eventType="editingDidEndOnExit" id="fPC-FV-VRR"/>
+                                </connections>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Snw-hq-VZQ">
+                                <rect key="frame" x="214" y="629" width="161" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hidden Segue Button"/>
+                                <connections>
+                                    <segue destination="AKf-XH-LEA" kind="presentation" identifier="multiview" id="8Iw-c3-NFN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8C-kv-8Zb">
+                                <rect key="frame" x="158" y="617" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Help"/>
+                                <connections>
+                                    <action selector="helpButton:" destination="28X-OF-kZj" eventType="touchUpInside" id="fXI-Np-VQG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-nh-LLw">
+                                <rect key="frame" x="126" y="513" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm URLs"/>
+                                <connections>
+                                    <action selector="checkURLAndSegue:" destination="28X-OF-kZj" eventType="touchUpInside" id="BBV-KO-B2n"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,9 +176,36 @@
                     <view key="view" contentMode="scaleToFill" id="DRL-0Y-acV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNo-Y7-7bU">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Add" id="U9L-ay-n3m">
+                                        <connections>
+                                            <action selector="addWebview:" destination="AKf-XH-LEA" id="yNT-X0-9VK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Remove" id="Lnj-5w-EW8">
+                                        <connections>
+                                            <action selector="removeWebview:" destination="AKf-XH-LEA" id="12P-cY-3tR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Config Page" id="Mr0-06-GEV">
+                                        <connections>
+                                            <action selector="returnToConfig:" destination="AKf-XH-LEA" id="sWs-gW-x0g"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Hide" id="Jdz-1k-Rz5"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wl5-EQ-o2G"/>
                     </view>
+                    <connections>
+                        <outlet property="toolbar" destination="oNo-Y7-7bU" id="SB7-qe-e92"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zdg-Fm-eea" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
