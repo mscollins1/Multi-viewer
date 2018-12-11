@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialFourthScene: UIViewController {
     //this is the connector for the first text field below the image
-    @IBOutlet weak var textFieldOutput: UITextView!
+    @IBOutlet weak var textFieldOutput: UILabel!
     
     //user goes back to the previous scene
     @IBAction func BackToTutorialThirdScene(_ sender: Any) {
@@ -25,7 +25,7 @@ class TutorialFourthScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //ouput shown in the text field to the user
-        textFieldOutput.text = "After clicking on add, a third website will be added to the screen. If there are already three screens showed, a pop up will apeear telling the user they can't use another screen."
+        textFieldOutput.text = "After clicking on add, a third website will be added to the screen. If there are already three screens showed, a pop up will appear telling the user they can't use another screen."
        
     }
 

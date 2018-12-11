@@ -10,7 +10,8 @@ import UIKit
 
 class TutorialFifthScene: UIViewController {
     //this is the connector for the first text field
-    @IBOutlet weak var outputTextField: UITextView!
+    @IBOutlet weak var outputTextField: UILabel!
+    
     
     //user goes back to previous scene
     @IBAction func BackToTutorialFourthScene(_ sender: Any) {
