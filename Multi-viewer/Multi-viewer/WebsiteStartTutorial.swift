@@ -9,18 +9,23 @@
 import UIKit
 
 class TutorialThirdScene: UIViewController {
-
+    //this is the connector for the first text field below the image
+    @IBOutlet weak var textFieldOutput: UITextView!
+    
+    //user goes back to the previous scene
     @IBAction func BackToTutorialSecondScene(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
    
+    //user goes back to the configuration page
     @IBAction func BackToConfigurationPage(_ sender: Any) {
         performSegue(withIdentifier: "WebsiteToConfig", sender: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //ouput shown in the text field to the user
+        textFieldOutput.text = "1) After entering valid websites and clicking on Confirms URLs, the URLs will be displayed. In this case, www.youtube.com and www.google.com were put into the URL fields.\n2) At the bottom, there are multiple options to click on."
+        
     }
 
     override func didReceiveMemoryWarning() {

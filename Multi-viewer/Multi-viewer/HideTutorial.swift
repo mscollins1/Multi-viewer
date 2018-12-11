@@ -10,8 +10,14 @@ import UIKit
 
 class TutorialSeventhScene: UIViewController {
 
+    //user goes back to configuration page 
     @IBAction func hideToConfigPage(_ sender: Any) {
         performSegue(withIdentifier: "HideToConfig", sender: nil)
+    }
+    
+    //user goes back to previous scene
+    @IBAction func BackToSixthScene(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

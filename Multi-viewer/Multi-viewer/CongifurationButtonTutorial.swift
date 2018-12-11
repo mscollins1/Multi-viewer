@@ -9,18 +9,24 @@
 import UIKit
 
 class TutorialSixthScene: UIViewController {
-
+    //this is the connector for the first text field
+    @IBOutlet weak var outputTextField: UITextView!
+    
+    //user goes back to previous scene
     @IBAction func BackToTutorialFifthScene(_ sender: Any) {
          self.dismiss(animated: true, completion: nil)
     }
+    
+    //user goes back to configuration page 
     @IBAction func BackToConfigurationPage(_ sender: Any) {
         performSegue(withIdentifier: "ConfigToConfig", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //ouput shown in the text field to the user
+        outputTextField.text = "After clicking on Config Page, you will be brought back to the configuration page. The URLs that you had on the previous screen are filled in for you. "
+        
     }
 
     override func didReceiveMemoryWarning() {
