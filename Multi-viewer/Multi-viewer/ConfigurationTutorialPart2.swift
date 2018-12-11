@@ -11,9 +11,11 @@ import UIKit
 class TutorialSecondView: UIViewController {
 
     //this is the connector for the first text field below the first image
-    @IBOutlet weak var textOutputFirst: UITextView!
+    @IBOutlet weak var textOutputFirst: UILabel!
+    
     //this is the connector for the second text field below the second image
-    @IBOutlet weak var textOutputSecond: UITextView!
+    @IBOutlet weak var textOutputSecond: UILabel!
+    
     
     //user goes back to the previous scene
     @IBAction func BackToTutorialFirstScene(_ sender: Any) {

@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialThirdScene: UIViewController {
     //this is the connector for the first text field below the image
-    @IBOutlet weak var textFieldOutput: UITextView!
+    @IBOutlet weak var textFieldOutput: UILabel!
     
     //user goes back to the previous scene
     @IBAction func BackToTutorialSecondScene(_ sender: Any) {

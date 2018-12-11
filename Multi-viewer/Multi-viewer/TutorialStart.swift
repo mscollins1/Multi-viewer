@@ -10,7 +10,8 @@ import UIKit
 
 class TutorialFirstScene: UIViewController {
     //this is the connector for the text field
-    @IBOutlet weak var textField1: UITextView!
+    @IBOutlet weak var textOutout: UILabel!
+    
     
     //previous button action
     @IBAction func BackToConfig(_ sender: Any) {
@@ -21,7 +22,7 @@ class TutorialFirstScene: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //output shown on screen using the text field
-        textField1.text = "1) Choose number of screens.\n2) Enter two or three URLs depending on # of screens chosen in the format of www.abc.com.\n3)A blank URL will be defaulted to www.google.com.\n4) Click on Confirm URLs to show websites on another page."
+        textOutout.text = "1) Choose number of screens.\n2) Enter two or three URLs depending on # of screens chosen in the format of www.abc.com.\n3)A blank URL will be defaulted to www.google.com.\n4) Click on Confirm URLs to show websites on another page."
         
         // Do any additional setup after loading the view.
     }
