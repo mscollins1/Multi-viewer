@@ -9,17 +9,22 @@
 import UIKit
 
 class TutorialFifthScene: UIViewController {
+    //this is the connector for the first text field
+    @IBOutlet weak var outputTextField: UITextView!
+    
+    //user goes back to previous scene
     @IBAction func BackToTutorialFourthScene(_ sender: Any) {
          self.dismiss(animated: true, completion: nil)
     }
     
+    //user goes back to configuration page 
     @IBAction func BackToConfigurationPage(_ sender: Any) {
         performSegue(withIdentifier: "RemoveToConfig", sender: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //ouput shown in the text field to the user
+        outputTextField.text = "When you click on remove, a pop up will appear allowing you to select a view to dissapear. If you are viewing two screens, and click on the remove button a popup will appear on the screen."
     }
 
     override func didReceiveMemoryWarning() {
