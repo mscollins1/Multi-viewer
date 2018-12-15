@@ -467,7 +467,7 @@
 		EE1FDBE421AB384000BD0DA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Multi-viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -485,7 +485,7 @@
 		EE1FDBE521AB384000BD0DA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Multi-viewer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;

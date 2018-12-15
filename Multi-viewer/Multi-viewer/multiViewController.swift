@@ -186,7 +186,7 @@ class multiViewController: UIViewController {
             numScreens = 3
         }
         initialSetupScreens()
-        view.backgroundColor = UIColor.cyan
+        //view.backgroundColor = UIColor.cyan
         //self.view.bringSubviewToFront(toolbar)
         self.view.bringSubview(toFront: toolbar)
         
