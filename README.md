@@ -5,7 +5,8 @@ An IOS solution to viewing multiple web-browsers on one screen and all in one ap
 Must have:
 * Apple computer of some sort
 * xcode9 installed
-Optional:
+
+Not required but nice to have:
 * git
 
 ## Getting the app downloaded
