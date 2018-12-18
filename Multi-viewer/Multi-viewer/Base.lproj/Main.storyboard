@@ -793,10 +793,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNo-Y7-7bU">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNo-Y7-7bU">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ceR-zL-EuJ"/>
                                     <barButtonItem title="Add" id="U9L-ay-n3m">
                                         <connections>
                                             <action selector="addWebview:" destination="AKf-XH-LEA" id="yNT-X0-9VK"/>
@@ -812,7 +813,7 @@
                                             <action selector="returnToConfig:" destination="AKf-XH-LEA" id="sWs-gW-x0g"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Hide" id="Jdz-1k-Rz5"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Iti-A6-CVe"/>
                                 </items>
                             </toolbar>
                         </subviews>
