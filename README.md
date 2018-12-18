@@ -14,9 +14,9 @@ Not required but nice to have:
 1. Create an empty folder/directory somewhere
 2. Open up terminal and cd to the empty folder/directory
 3. Clone this repo
-'git clone https://github.com/mscollins1/Multi-viewer.git'
+`git clone https://github.com/mscollins1/Multi-viewer.git`
 4. Switch to the right branch
-'git checkout xcode9'
+`git checkout xcode9`
 ### Direct Download
 1. Click the download button and then choose 'download zip' option and save wherever
 2. unzip to desired location
