@@ -19,13 +19,15 @@ Must have:
 1. Click the download button and then choose 'download zip' option and save wherever
 2. unzip to desired location
 
-## Simulating on your device
-Follow this handy guide [here!](https://www.twilio.com/blog/2018/07/how-to-test-your-ios-application-on-a-real-device.html)
+## Using the app
 
-## Using Xcode's simulator
+### Using Xcode's simulator
 Open the file and click the run button at the top left of your screen
 
-## Downloading to your device
+### Simulating on your device (through xcode)
+Follow this handy guide [here!](https://www.twilio.com/blog/2018/07/how-to-test-your-ios-application-on-a-real-device.html)
+
+### Downloading to your device
 Follow this hand guide [here!](https://docs.monaca.io/en/products_guide/monaca_ide/deploy/non_market_deploy/)
 
 ## Acknowledgments
